@@ -28,7 +28,6 @@ volumes:
 properties:
     DAV_FOLDER: /dumps
     DAV_USER: appz
-    DAV_USER: '${DAV_USER:-appz}
     DAV_USERPASSWORD: 
       vault: DAV_USERPASSWORD
     revision : 12
