@@ -1,0 +1,43 @@
+app:
+    name: webdav
+    code: webdav
+    notify: mniju@ecloudcontrol.com
+    
+build:
+    version: 13.X
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: postgres_master-13.3
+    
+deploy:
+    context: minnaniju/DEV
+    type: statefulset
+    ingress: none
+    replicas: 1
+    port:
+    - 5432
+    
+volumes:
+  - claim: postgres-master-data
+    mount: /appz/data
+    name: data
+    size: 5Gi
+    mode: ReadWriteOnce   
+    
+properties:
+    POSTGRESQL_REPLICATION_MODE: master
+    POSTGRESQL_DATA: /appz/data
+    POSTGRESQL_CONNECTUSER: postgres
+    POSTGRESQL_CONNECTIONDB: postgres
+    POSTGRESQL_PORT: 5432
+    POSTGRES_PASSWORD: 
+      vault: POSTGRESQL_PASSWORD
+    POSTGRESQL_SYNCHRONOUS_COMMIT_MODE: on
+    POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS: 1
+    POSTGRESQL_REP_USER: replica
+    PGPASSWORD: 
+      vault: PGPASSWORD
+    revision : 80
+
+   
