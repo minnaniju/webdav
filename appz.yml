@@ -16,7 +16,7 @@ deploy:
     ingress: none
     replicas: 1
     port:
-    - 5432
+    - 80
     
 volumes:
   - claim: webdav-data
