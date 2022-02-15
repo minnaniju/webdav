@@ -19,7 +19,7 @@ deploy:
     - 5432
     
 volumes:
-  - claim: postgres-master-data
+  - claim: webdav-data
     mount: /appz/data
     name: data
     size: 5Gi
