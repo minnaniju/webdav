@@ -25,11 +25,8 @@ volumes:
     mode: ReadWriteOnce   
     
 properties:
-    DAV_FOLDER: /dumps
+    DAV_FOLDER: /
     DAV_USER: appz
-    DAV_READONLY_USER: dav_user
-    DAV_READONLY_USERPASSWORD:
-      vault: DAV_READONLY_USERPASSWORD
     DAV_USERPASSWORD: 
       vault: DAV_USERPASSWORD
     revision : 18
