@@ -29,6 +29,9 @@ properties:
     DAV_USER: appz
     DAV_USERPASSWORD: 
       vault: DAV_USERPASSWORD
+    DAV_READONLY_USER: appz_readonly
+    DAV_READONLY_USERPASSWORD: 
+       vault: DAV_READONLY_USERPASSWORD
     revision : 19
 
    
